@@ -1,0 +1,390 @@
+/* GLOBALNE RETRO USTAWIENIA */
+body {
+    background-color: #ff66b2;
+    /* Różowa kratka / wzorek w stylu lat 2000 */
+    background-image: linear-gradient(45deg, #ff99cc 25%, transparent 25%), 
+                      linear-gradient(-45deg, #ff99cc 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #ff99cc 75%), 
+                      linear-gradient(-45deg, transparent 75%, #ff99cc 75%);
+    background-size: 40px 40px;
+    font-family: "MS Sans Serif", Geneva, sans-serif; /* Klasyczny systemowy font */
+    color: #000;
+    margin: 0;
+    padding: 10px;
+}
+
+/* BANER NAGŁÓWKA */
+.y2k-banner {
+    background: #ff007f;
+    border: 4px ridge #ff99cc;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.y2k-banner h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-family: 'Impact', sans-serif;
+    letter-spacing: 2px;
+    color: #ffff00; /* Żółty napompowany napis */
+    text-shadow: 3px 3px 0px #000;
+}
+
+/* KLASYCZNE OKIENKO SYSTEMOWE (A'LA WINDOWS 98 / SO PRETTY) */
+.win-window {
+    background: #e6e6e6; /* Klasyczna systemowa szarość */
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #808080;
+    border-bottom: 3px solid #808080;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    max-width: 450px;
+    margin: 25px auto;
+    padding: 3px;
+}
+
+/* PASEK TYTUŁOWY OKIENKA (CIEMNORÓŻOWY) */
+.win-titlebar {
+    background: linear-gradient(90deg, #99004d, #ff007f);
+    color: white;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.win-controls {
+    display: flex;
+    gap: 3px;
+}
+
+.win-btn {
+    background: #e6e6e6;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #555;
+    border-bottom: 1px solid #555;
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    cursor: pointer;
+}
+
+/* ZAWARTOŚĆ OKIENKA */
+.win-content {
+    background: white;
+    border: 2px inset #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+/* STYLIZACJA FOTO W OKIENKU */
+.carousel-slide img {
+    width: 100%;
+    height: 60vh;        /* vh to wysokość ekranu. Zdjęcie zajmie max 60% wysokości wyświetlacza */
+    max-height: 700px;   /* Żeby na monitorze komputera nie było za ogromne */
+    min-height: 250px;   /* Żeby na małym telefonie nie zrobiło się mikroskopijne */
+    
+    object-fit: contain; 
+    background-color: #1a1a1a; 
+    border: 3px inset #e6e6e6;
+    border-radius: 5px;
+}
+
+#carousel-caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #99004d;
+    margin: 10px 0;
+}
+
+/* PRZYCISKI Y2K */
+.carousel-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.y2k-btn, .y2k-btn-option {
+    background: #e6e6e6;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.y2k-btn:active, .y2k-btn-option:active {
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.y2k-btn-option {
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+#counter {
+    font-size: 1.3rem;
+    font-family: monospace;
+    background: #000;
+    color: #04ff00; /* Zielony cyber-licznik */
+    padding: 8px;
+    border: 2px inset #808080;
+}
+
+/* EFEKT MRUGANIA Z LAT 90/2000 */
+.blink {
+    animation: blinker 1.5s linear infinite;
+}
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+/* PASEK ZAKŁADEK */
+.browser-tabs {
+    display: flex;
+    background: #e6e6e6;
+    padding: 5px 5px 0 5px;
+    border-bottom: 2px solid #808080;
+    gap: 4px;
+}
+
+/* PRZYCISKI ZAKŁADEK */
+.tab-btn {
+    background: #d4d0c8;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #808080;
+    border-bottom: none;
+    padding: 6px 12px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: relative;
+    top: 2px; /* Żeby nachodziły na linię */
+}
+
+/* AKTYWNA ZAKŁADKA (KLIKNIĘTA) */
+.tab-btn.active {
+    background: white;
+    border-bottom: 2px solid white;
+    top: 2px;
+    z-index: 2;
+    color: #ff007f;
+}
+
+/* UKRYWANIE I POKAZYWANIE TREŚCI */
+.tab-content {
+    display: none; /* Domyślnie ukryte */
+}
+
+.tab-content.active-content {
+    display: block; /* Pokazane, gdy aktywne */
+}
+
+
+/* PASEK ZADAŃ (TASKBAR) */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #e6e6e6;
+    border-top: 3px solid #fff;
+    display: flex;
+    align-items: center;
+    padding: 2px 10px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+.start-btn {
+    font-weight: bold;
+    background: #e6e6e6;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    height: 30px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.start-btn:active {
+    border: 2px inset #000;
+}
+
+.taskbar-divider {
+    width: 2px;
+    height: 25px;
+    background: #808080;
+    border-right: 1px solid #fff;
+    margin: 0 10px;
+}
+
+.taskbar-tabs {
+    display: flex;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.task-tab {
+    background: #e6e6e6;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    height: 30px;
+    min-width: 100px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 8px;
+}
+
+.task-tab.active {
+    background: #d5d5d5;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    font-weight: bold;
+}
+
+.taskbar-clock {
+    background: #e6e6e6;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 3px 10px;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+/* SIATKA BLOGA - ROZSTAWIANIE OKIENIEK */
+.blog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto 60px auto; /* margines na dole, żeby pasek nic nie zasłaniał */
+    box-sizing: border-box;
+}
+
+/* INDYWIDUALNE ROZMIARY OKIEN DLA EFEKTU KOLAŻU */
+.window-photos {
+    flex: 1 1 650px; /* Okno ze zdjęciami będzie największe */
+    max-width: 850px;
+    max-height: 1200px;
+}
+
+.window-counter {
+    flex: 1 1 320px; /* Mniejsze okienko z boku */
+    max-width: 400px;
+    height: fit-content;
+}
+
+.window-quiz {
+    flex: 1 1 400px; /* Średnie okienko */
+    max-width: 500px;
+}
+
+/* DODATKOWE STYLE ELEMENTÓW BLOGA Y2K */
+.y2k-blog-title {
+    color: #ff007f;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 0px #fff;
+    font-family: 'MS Sans Serif', Geneva, sans-serif;
+}
+
+.y2k-subtext {
+    font-size: 0.85rem;
+    color: #cc0066;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.retro-counter {
+    background: #000;
+    color: #00ff00;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    display: block;
+    border: 3px inset #808080;
+    text-shadow: 0 0 4px #00ff00;
+    margin: 10px auto;
+    word-break: break-word;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Reset tła pulpitu, żeby okienka dobrze siadały */
+.desktop {
+    display: block;
+    min-height: 100vh;
+    width: 100%;
+}
+/* STYL DLA RETRO REKLAMY PONIŻEJ LICZNIKA */
+.retro-ad-box {
+    margin-top: 15px;
+    max-width: 380px; /* Taka sama szerokość jak licznik */
+    background: #e6e6e6;
+    border: 3px outset #ffffff; /* Efekt wypukłej ramki Windows 95 */
+    padding: 6px;
+    text-align: center;
+    box-shadow: 2px 2px 0px #000000;
+}
+
+.retro-ad-box img {
+    width: 100%;
+    height: auto;
+    border: 2px inset #808080; /* Wciśnięta ramka wokół samego obrazka */
+    display: block;
+}
+
+.ad-text {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: #ff007f;
+    font-weight: bold;
+    margin-top: 4px;
+    text-shadow: 1px 1px 0px #ffffff;
+    animation: blink 1s infinite alternate; /* Efekt mrugania tekstu */
+}
+
+/* Animacja mrugania dla podkręcenia klimatu lat 2000 */
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+}

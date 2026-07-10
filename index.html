@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★ YOUR SPACE ★</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="y2k-banner">
+        <h1 class="blink">★ MAJA SPACE ★</h1>
+        <p class="sparkle">~ Oficjalny Panel 18-stkowy mai ~</p>
+    </header>
+
+    <main class="desktop">
+
+    <div class="blog-grid">
+
+        <section class="win-window window-photos">
+            <div class="win-titlebar">
+                <span class="win-title">📷 Wspomnienia.exe</span>
+                <div class="win-controls"><button class="win-btn">🗙</button></div>
+            </div>
+            <div class="win-content">
+             
+                <div class="carousel-slide">
+                    <img id="carousel-img" src="images/foto1.JPG" alt="Wspomnienia">
+                    <p id="carousel-caption">Ładowanie wspomnień...</p>
+                </div>
+                <div class="carousel-buttons">
+                  
+                    <button class="y2k-btn" onclick="prevSlide()">◀ Wstecz</button>
+                    <button class="y2k-btn" onclick="nextSlide()">Dalej ▶</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="win-window window-counter">
+            <div class="win-titlebar">
+                <span class="win-title">⏳ Life_Clock.sys</span>
+                <div class="win-controls"><button class="win-btn">🗙</button></div>
+            </div>
+            <div class="win-content text-center">
+                <h3 class="y2k-blog-title">I LOVE MAJA</h3>
+                <p style="font-weight: bold; margin-bottom: 5px;">Czas spędzony na tym świecie:</p>
+                <div id="counter" class="retro-counter">Obliczanie...</div>
+                <p class="y2k-subtext">#goals #timeflies #adultlife</p>
+            </div>
+        </section>
+
+        <div class="retro-ad-box">
+            <a href="#" target="_blank">
+                <img src="https://i.pinimg.com/originals/b9/34/23/b934233eca730cb0c2d94f40f4bc493a.gif" alt="Retro Ad Banner">
+            </a>
+            <div class="ad-text">✨ SPONSOROWANE: KLIKNIJ TUTAJ! ✨</div>
+        </div>
+
+        <section class="win-window" style="box-shadow: 2px 2px 0px #000000;">
+            <div class="win-titlebar" style="padding: 4px 8px;">
+                <span class="win-title" style="font-size: 0.85rem; font-weight: bold;">🔮 Horoskop_18.exe</span>
+                <div class="win-controls"><button class="win-btn">🗙</button></div>
+            </div>
+            <div class="win-content" style="background: #fff0f5; padding: 20px; text-align: center;">
+                <p style="font-family: 'Courier New', monospace; font-size: 2.0rem; font-weight: bold; color: #cc0066; margin: 0 0 12px 0; letter-spacing: 1px;">
+                    ★ CO PRZYNIESIE PEŁNOLETNIOŚĆ? ★
+                </p>
+                <div id="horoscope-text" style="font-family: 'Courier New', monospace; font-size: 1.2rem; font-style: italic; font-weight: bold; min-height: 100px; border: 2px inset #808080; padding: 10px; background: #fff; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; line-height: 1.4; color: #333;">
+                    Kliknij przycisk poniżej i poznaj swoją dorosłą przyszłość... 🌟
+                </div>
+                <button class="y2k-btn" onclick="tellFortune()" style="width: 100%; font-size: 0.85rem; padding: 20px; font-weight: bold; text-transform: uppercase;">
+                    [ 🔮 WYLOGUJ PRZEPOWIEDNIĘ 🔮 ]
+                </button>
+            </div>
+        </section>
+
+        <section class="win-window window-counter">
+            <div class="win-titlebar">
+                <span class="win-title">💬 Guestbook_GG.sys</span>
+                <div class="win-controls"><button class="win-btn">🗙</button></div>
+            </div>
+            <div class="win-content" style="background: #e6e6e6; padding: 10px;">
+                <div style="background: #fff; border: 2px inset #808080; padding: 6px; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px;">
+                    <img src="https://GG.pl/app/assets/images/status_online.png" alt="GG" style="width: 24px; height: 24px; object-fit: contain;">
+                    <span style="font-family: Tahoma, sans-serif; font-size: 0.85rem; font-weight: bold; color: #444;">
+                        <strong>Maja: <span style="color: #ff9900;">Zostaw wpis! 18tka! 🎉</span></strong>
+                    </span>
+                </div>
+
+                <div style="border: 2px inset #fff; background: #fff; padding: 8px; font-family: 'Courier New', monospace;">
+                    <p style="margin: 0 0 5px 0; font-size: 0.8rem; font-weight: bold; color: #cc0066;">★ WPISZ SIĘ NA BLOGA ★</p>
+                    <input type="text" id="g-name" placeholder="Twój nick..." style="width: 100%; font-size: 1.0rem; margin-bottom: 5px; padding: 2px; border: 2px inset #808080;">
+                    <textarea id="g-msg" placeholder="Życzenia dla Mai... 🎉" rows="2" style="width: 100%; font-size: 1.0rem; resize: none; padding: 2px; border: 2px inset #808080; display: block;"></textarea>
+                    <button class="y2k-btn" onclick="addPost()" style="width: 100%; margin-top: 10px; font-size: 0.8rem; padding: 3px;">[ WYŚLIJ WPIS ]</button>
+                    
+                    <div id="guestbook-entries" style="margin-top: 10px; max-height: 200px; overflow-y: auto; font-size: 1.5rem; border-top: 1px dashed #808080; padding-top: 5px; text-align: left;">
+                        <div><strong>Matylda:</strong> Sto lat Maja!! LOLOLOLO! 💖</div>
+                        <div><strong>Matylda:</strong> JAPPY BIRTH!</div>
+                        <div><strong>Matylda:</strong> Zdrownia Szcześcia! Dużo przygód i spełnienia marzeń!</div>
+                        <div><strong>Matylda:</strong> Sto lat Maja!! LOLOLOLO! 💖</div>
+                        <div><strong>Matylda:</strong> Dużo pieniędzy, super ziomków!!</div>
+                        <div><strong>Matylda:</strong> Więcej meet up-ów ze mną, deskowych wypadów :PP</div>
+                        <div><strong>Matylda:</strong> Zdania prawka! i nowego auta. RAH</div>
+                        <div><strong>Matylda:</strong> Wymarzonych studiów. Jak najwięcej imprez ♪┏(・o･)┛♪</div>
+                        <div><strong>Matylda:</strong> Wszystkiego co sobie życzysz!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="win-window window-counter">
+            <div class="win-titlebar">
+                <span class="win-title">🐱 KotekTamagotchi.exe</span>
+                <div class="win-controls"><button class="win-btn">🗙</button></div>
+            </div>
+            <div class="win-content text-center" style="background: #e6e6e6;">
+                <div style="background: #a3d9c9; border: 3px inset #808080; padding: 20px; margin-bottom: 10px; border-radius: 5px; min-height: 110px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div id="pet-img" style="font-family: monospace; font-size: 2.5rem; color: #111; margin-bottom: 10px; font-weight: bold; letter-spacing: 2px;">
+                        (=^･ω･^=)
+                    </div>
+                    <p id="pet-status" style="font-family: monospace; font-weight: bold; font-size: 1.2rem; color: #111; margin: 0;">
+                        Maja's Cyber Cat: Szczęśliwy!
+                    </p>
+                </div>
+                <div style="display: flex; gap: 5px; justify-content: center;">
+                    <button class="y2k-btn" onclick="actionPet('feed')" style="font-size: 0.8rem; padding: 4px 8px;">[nakarm]</button>
+                    <button class="y2k-btn" onclick="actionPet('pet')" style="font-size: 0.8rem; padding: 4px 8px;">[głaskaj]</button>
+                    <button class="y2k-btn" onclick="actionPet('sleep')" style="font-size: 0.8rem; padding: 4px 8px;">[spanko]</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="win-window window-quiz" id="quiz-window-box">
+            <div class="win-titlebar">
+                <span class="win-title">🔞 Quiz_Maja_18.exe</span>
+                <div class="win-controls"><button class="win-btn">🗙</button></div>
+            </div>
+            <div class="win-content" id="quiz-box" style="padding: 10px;">
+                <h3 class="y2k-blog-title" style="text-align: center; margin-top: 0;">★ TEST DOJRZAŁOŚCI ★</h3>
+                <p id="quiz-progress" style="font-size: 1.5rem; color: #cc0066; font-weight: bold; text-align: center; margin: 0; min-height: 18px;"></p>
+                <p id="question" style="font-weight: bold; margin-top: 5px; margin-bottom: 15px; text-align: center; min-height: 40px; color: #000;">
+                    Ładowanie pytań...
+                </p>
+                <div id="quiz-options" style="display: flex; flex-direction: column; gap: 6px;"></div>
+                <div id="quiz-result-zone" style="display: none; text-align: center; padding: 10px;">
+                    <h4 id="quiz-percentage" style="font-size: 2rem; color: #ff007f; margin: 10px 0; font-family: monospace; font-weight: bold;">0%</h4>
+                    <p id="quiz-summary-text" style="font-weight: bold; font-size: 1rem; color: #333; line-height: 1.4;"></p>
+                    <button class="y2k-btn" style="margin-top: 15px; padding: 5px 15px;" onclick="restartQuiz()">🔄 Spróbuj ponownie</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="taskbar">
+        <button class="start-btn">Start</button>
+        <div class="taskbar-divider"></div>
+        <div class="taskbar-tabs">
+            <button class="task-tab active">💖 Maja_Space</button>
+            <button class="task-tab active">⛏️ Minecraft</button>
+            <button class="task-tab active">( -_•)ᡕᠵデᡁ᠊╾━💥 Valorant</button>
+            <button class="task-tab active">♫⋆｡ ♪ ₊˚♬ﾟ. Spotify</button>
+            <button class="task-tab active">⭕ Opera</button>
+        </div>
+        <div class="taskbar-clock" id="live-clock">12:00</div>
+    </div>
+
+</main>
+
+    <script>
+        // === BLOKADA HASŁEM NA WEJŚCIU ===
+        const sekretneHaslo = "Maja18"; // Możesz zmienić to hasło na inne w tym miejscu!
+        let podaneHaslo = prompt("Ta strona jest prywatna. Podaj tajne hasło dostępu:");
+
+        if (podaneHaslo !== sekretneHaslo) {
+            alert("Niepoprawne hasło! Brak dostępu.");
+            // Całkowite czyszczenie i blokowanie strony
+            document.body.innerHTML = "<div style='color:#cc0066; text-align:center; margin-top:20%; font-family:monospace; font-size: 2rem; font-weight: bold;'>🔒 DOSTĘP ZABLOKOWANY<br><span style='font-size:1.2rem; color:#666;'>Odśwież stronę i spróbuj ponownie.</span></div>";
+            window.stop(); 
+        }
+
+        // === 1. LICZNIK DNI (LIFE CLOCK) ===
+        const bDate = new Date(2008, 5, 28, 12, 54, 0); 
+
+        function forceCalculations() {
+            const el = document.getElementById('counter');
+            if (!el) return;
+            const now = new Date();
+            const diff = now - bDate;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const m = Math.floor((diff / (1000 * 60)) % 60);
+            const s = Math.floor((diff / 1000) % 60);
+            el.innerHTML = d + "d, " + h + "h, " + m + "m, " + s + "s";
+        }
+        forceCalculations();
+        setInterval(forceCalculations, 1000);
+
+        // === ZEGAR SYSTEMOWY (TASKBAR CLOCK) ===
+        function updateLiveClock() {
+            const clockEl = document.getElementById('live-clock');
+            if (!clockEl) return;
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            
+            if (minutes < 10) minutes = '0' + minutes;
+            if (hours < 10) hours = '0' + hours;
+            
+            clockEl.innerText = hours + ':' + minutes;
+        }
+        updateLiveClock();
+        setInterval(updateLiveClock, 1000);
+
+        // === 2. ZDJĘCIA (KARUZELA) ===
+        const images = [
+            { src: 'images/foto0.JPG', caption: 'MAKE A WISH!' },
+            { src: 'images/foto1.JPG', caption: '★ Kiedy byłaś jeszcze mała... ★' },
+            { src: 'images/foto2.JPG', caption: 'MNIAM MNIAM' },
+            { src: 'images/foto3.JPG', caption: 'baby' },
+            { src: 'images/foto4.JPG', caption: 'woooo' },
+            { src: 'images/foto5.JPG', caption: 'US' },
+            { src: 'images/foto6.JPG', caption: 'Big night' },
+            { src: 'images/foto7.JPG', caption: 'Boże narodzenie' },
+            { src: 'images/foto8.JPG', caption: 'girl wtf' },
+            { src: 'images/foto9.JPG', caption: 'komunism' },
+            { src: 'images/foto10.JPG', caption: 'pat pat piesek' },
+            { src: 'images/foto11.JPG', caption: 'PREZENT!!!' },
+            { src: 'images/foto12.JPG', caption: 'run run biegamy' },
+            { src: 'images/foto13.JPG', caption: 'WEEEE' },
+            { src: 'images/foto14.JPG', caption: 'dig dig dig' },
+            { src: 'images/foto15.JPG', caption: 'drzewo' },
+            { src: 'images/foto16.JPG', caption: 'sweet focia' },
+            { src: 'images/foto17.JPG', caption: 'happy happy happy' },
+            { src: 'images/foto18.JPG', caption: 'nocowanka' },
+            { src: 'images/foto19.JPG', caption: 'deski swag' },
+            { src: 'images/foto20.JPG', caption: 'cutie patoties' },
+            { src: 'images/foto21.JPG', caption: 'picka' },
+            { src: 'images/foto22.JPG', caption: 'jesus night love' },
+            { src: 'images/foto23.JPG', caption: 'RAAH' },
+            { src: 'images/foto24.JPG', caption: 'dayum' },
+            { src: 'images/foto25.JPG', caption: '18' },
+            { src: 'images/foto26.JPG', caption: 'hihi haha' },
+            { src: 'images/foto27.JPG', caption: 'divy aah' },
+            { src: 'images/foto28.JPG', caption: 'pose' },
+            { src: 'images/foto29.JPG', caption: 'lolololol' },
+            { src: 'images/foto30.JPG', caption: 'swag' },
+            { src: 'images/foto31.JPG', caption: 'HOT AHH LASKi' },
+            { src: 'images/foto32.JPG', caption: 'LOVE AHAHAHA' },
+            { src: 'images/foto33.JPG', caption: 'HAPPY BIRTH' },
+            { src: 'images/foto34.JPG', caption: 'WSZYSTKIEGO NAJLEPSZEGO!!!' }
+        ];
+
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const imgElement = document.getElementById('carousel-img');
+            const captionElement = document.getElementById('carousel-caption');
+            if (!imgElement || !captionElement || images.length === 0) return;
+
+            if (index >= images.length) currentSlide = 0;
+            else if (index < 0) currentSlide = images.length - 1;
+            else currentSlide = index;
+
+            imgElement.src = images[currentSlide].src;
+            captionElement.innerText = images[currentSlide].caption;
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            showSlide(currentSlide);
+        });
+
+        // === ZAKŁADKI ===
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active-content");
+            }
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active-content");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // === TAMAGOTCHI ===
+        function actionPet(type) {
+            const statusText = document.getElementById('pet-status');
+            const petImg = document.getElementById('pet-img');
+            if (!statusText || !petImg) return;
+
+            if (type === 'feed') {
+                statusText.innerText = "Maja's Cyber Cat: Najedzony! 🐟";
+                petImg.innerText = "(๑´ڡ`๑) <3";
+            } 
+            else if (type === 'pet') {
+                statusText.innerText = "Maja's Cyber Cat: Mruczy! 🥰";
+                petImg.innerText = "(=`ω´=) *miau*";
+            } 
+            else if (type === 'sleep') {
+                statusText.innerText = "Maja's Cyber Cat: Śpi... 💤";
+                petImg.innerText = "(–_–)zzZ";
+            }
+            
+            setTimeout(() => {
+                if (statusText.innerText.includes("Śpi")) return;
+                statusText.innerText = "Maja's Cyber Cat: Szczęśliwy!";
+                petImg.innerText = "(=^･ω･^=)";
+            }, 4000);
+        }
+
+        // === KSIĘGA GOŚCI ===
+        function addPost() {
+            const nameInput = document.getElementById('g-name');
+            const msgInput = document.getElementById('g-msg');
+            const entriesDiv = document.getElementById('guestbook-entries');
+
+            if (!nameInput || !msgInput || !entriesDiv) return;
+            if (nameInput.value.trim() === "" || msgInput.value.trim() === "") {
+                alert("Wpisz nick i wiadomość! 😉");
+                return;
+            }
+
+            const newEntry = document.createElement('div');
+            newEntry.style.marginBottom = "5px";
+            newEntry.innerHTML = `<strong>${nameInput.value}:</strong> ${msgInput.value}`;
+            entriesDiv.insertBefore(newEntry, entriesDiv.firstChild);
+            nameInput.value = "";
+            msgInput.value = "";
+        }
+
+        // === QUIZ ===
+        const quizData = [
+            {
+                q: "1. Jaki jest Twój ostateczny plan na radzenie sobie z dorosłym życiem?",
+                options: [
+                    { text: "A) Udawanie, że wiem co robię i liczenie na farta", points: 25 },
+                    { text: "B) Ignorowanie dorosłości i słuchanie muzyki", points: 20 },
+                    { text: "C) Płakanie w kącie na sam dźwięk słowa 'podatki'", points: 25 },
+                    { text: "D) Kupowanie losowych rzeczy w internetowe zakupy", points: 30 }
+                ]
+            },
+            {
+                q: "2. Kupujesz energetyka bez pytania o dowód. Co czujesz?",
+                options: [
+                    { text: "A) Nielimitowaną władzę nad światem i systemem", points: 25 },
+                    { text: "B) Strach, że kasjerka zaraz krzyknie 'Żartowałam!'", points: 15 },
+                    { text: "C) Dumę, że urosłam te dodatkowe 2 centymetry", points: 20 },
+                    { text: "D) Nic, jestem już na to zbyt dojrzała", points: 25 }
+                ]
+            },
+            {
+                q: "3. Ktoś prosi Cię o podjęcie ważnej decyzji. Twoja reakcja?",
+                options: [
+                    { text: "A) Dzwonię do mamy. Natychmiast.", points: 10 },
+                    { text: "B) Rzucam monetą albo sprawdzam horoskop", points: 20 },
+                    { text: "C) Mówię 'YOLO' i wybieram najbardziej chaotyczną opcję", points: 25 },
+                    { text: "D) Udaję, że nagle straciłam zasięg w telefonie", points: 20 }
+                ]
+            },
+            {
+                q: "4. Najbardziej dorosła rzecz, jaką udało Ci się dziś zrobić to:",
+                options: [
+                    { text: "A) Wstanie z łóżka przed godziną 12:00", points: 20 },
+                    { text: "B) Napicie się wody zamiast czegoś słodkiego", points: 25 },
+                    { text: "C) Przeżycie dnia bez zgubienia słuchawek", points: 20 },
+                    { text: "D) Pomyślenie o tym, że powinnam posprzątać pokój", points: 15 }
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let totalScore = 0;
+
+        function loadQuestion() {
+            const qElement = document.getElementById('question');
+            const progressElement = document.getElementById('quiz-progress');
+            const optionsContainer = document.getElementById('quiz-options');
+            const resultZone = document.getElementById('quiz-result-zone');
+
+            if (!qElement || !optionsContainer || !resultZone) return;
+
+            resultZone.style.display = "none";
+            qElement.style.display = "block";
+            optionsContainer.style.display = "flex";
+
+            if (currentQuestionIndex < quizData.length) {
+                const currentQuiz = quizData[currentQuestionIndex];
+                if (progressElement) progressElement.innerText = "PYTANIE " + (currentQuestionIndex + 1) + " z " + quizData.length;
+                qElement.innerText = currentQuiz.q;
+                optionsContainer.innerHTML = '';
+
+                currentQuiz.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'y2k-btn'; 
+                    btn.style.width = "100%";
+                    btn.style.textAlign = "left";
+                    btn.style.padding = "6px 10px";
+                    btn.style.fontSize = "1.0rem";
+                    btn.innerText = opt.text;
+                    btn.onclick = () => { 
+                        totalScore += opt.points; 
+                        currentQuestionIndex++; 
+                        loadQuestion(); 
+                    };
+                    optionsContainer.appendChild(btn);
+                });
+            } else {
+                if (progressElement) progressElement.innerText = "★ WYNIK TESTU ★";
+                qElement.style.display = "none";
+                optionsContainer.style.display = "none";
+                resultZone.style.display = "block";
+                
+                let finalPercentage = Math.min(totalScore, 100);
+                document.getElementById('quiz-percentage').innerText = finalPercentage + "%";
+                const summary = document.getElementById('quiz-summary-text');
+                if (finalPercentage >= 90) {
+                    summary.innerHTML = "👑 DOROSŁOŚĆ :-:! Masz oficjalnie 18 lat! spełniaj marzenia i żyj pełnią życia <3";
+                } else if (finalPercentage >= 70) {
+                    summary.innerHTML = "⚡ PRAWIE PEŁNOLETNIA! Dowód osobisty? Jest. Dojrzałość emocjonalna? Brak :DDDD";
+                } else if (finalPercentage >= 50) {
+                    summary.innerHTML = "🧸 PÓŁ NA PÓŁ! 18 lat na koncie, dorosłe obowiązki później. Czas na zabawe!";
+                } else {
+                    summary.innerHTML = "🍼 ERROR 404! Maja ma 18 lat tylko na papierze, w środku to wciąż czysty, chaos i sabotaż! XD";
+                }
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            totalScore = 0;
+            loadQuestion();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadQuestion();
+        });
+
+        // === GWIAZDKI KURSORA ===
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.15) return; 
+            const star = document.createElement('div');
+            star.innerText = "✨";
+            star.style.position = 'fixed';
+            star.style.left = e.clientX + 'px';
+            star.style.top = e.clientY + 'px';
+            star.style.pointerEvents = 'none';
+            star.style.fontSize = Math.floor(Math.random() * 10 + 10) + 'px';
+            star.style.zIndex = '99999';
+            star.style.transition = 'all 0.8s ease-out';
+            star.style.opacity = '2';
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.style.transform = `translate(${(Math.random() - 0.5) * 40}px, 40px) scale(0.5)`;
+                star.style.opacity = '0';
+            }, 50);
+
+            setTimeout(() => { star.remove(); }, 800);
+        });
+
+        // === HOROSKOP ===
+        function tellFortune() {
+            const fortunes = [
+                "🔮 Gwiazdy mówią: Twój portfel ucierpi przez internetowe zakupy, ale Twoja szafa będzie zachwycona! 🛍️",
+                "🔮 Horoskop GG: Ktoś z Twojej listy kontaktów właśnie o Tobie myśli... i to nie jest bot! 🤫",
+                "🔮 Przepowiednia: Kawa zacznie smakować jak eliksir życia, a podatki... nadal będą nudne. ☕",
+                "🔮 Sukces Y2K: Zostaniesz ikoną stylu tej dekady. Przygotuj okulary przeciwsłoneczne z cyrkoniami! 😎",
+                "🔮 Przyszłość: Dzisiaj zjesz OSZOŁAMIAJĄCO pyszne jedzenie i zapomnisz o obowiązkach! 🍕",
+                "🔮 Gwiezdny status: Twój retro profil osiągnie dziś rekordową liczbę odwiedzin! Ponad 99999 wyświetleń! ✨",
+                "🔮 Dorosłość: Od jutra oficjalnie możesz kupić wszystko, ale i tak skończy się na proszeniu mamy o pomoc. 🧸"
+            ];
+            const horoscopeBox = document.getElementById('horoscope-text');
+            if (!horoscopeBox) return;
+            const randomIdx = Math.floor(Math.random() * fortunes.length);
+            horoscopeBox.innerText = "Łączenie z gwiazdami... 📡";
+            setTimeout(() => { horoscopeBox.innerText = fortunes[randomIdx]; }, 400);
+        }
+    </script>
+</body>
+</html>
